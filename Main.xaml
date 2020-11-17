@@ -88,7 +88,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="231,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;Subject of mail is &quot; +mail.Subject+&quot; and Sender Mail Id is &quot; +mail.SenderEmailAddress]" />
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="231,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;Subject of mail is &quot; +mail.Subject+&quot; and Sender Mail Id is  &quot; +mail.SenderEmailAddress]" />
           </Sequence>
         </ActivityAction>
       </ui:ForEach.Body>
