@@ -53,16 +53,18 @@
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>UiPath.Activities.Contracts</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="For reading first unread 5 emails in gmail and writing the subject to the output" sap:VirtualizedContainerService.HintSize="376,644" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="pass" />
-      <Variable x:TypeArguments="x:String" Name="Email">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">priyapedamallu3@gmail.com</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="priyapedamallu3@gmail.com" Name="Email" />
       <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="GetEmails" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -86,7 +88,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="231,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[mail.Subject]" />
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="231,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;Subject of mail is &quot; +mail.Subject+&quot; and Sender Mail Id is &quot; +mail.SenderEmailAddress]" />
           </Sequence>
         </ActivityAction>
       </ui:ForEach.Body>
